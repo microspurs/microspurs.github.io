@@ -85,6 +85,47 @@
                         <img src="picture/雾天.jpg" alt="">
                     </div>
                 </div> 
+		<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = data.hitokoto; 
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
+
+</head>
+<!--
+-->
+
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
+<!--microspurs-->
+<div class="projects-header">
+      
+        <div class="projects-holder">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 p-1 animated umScaleIn">
+                    <div class="project-item">
+                        <img src="picture/photo-4.jpeg" alt="">
+                    </div>
+                </div>
+                  <div class="col-md-4 col-sm-6 p-2 animated umScaleIn">
+                    <div class="project-item">
+                        <img src="picture/photo-6.jpeg" alt="">
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-4 col-sm-6 p-3 animated umScaleIn">
+                    <div class="project-item">
+                        <img src="picture/photo-5.jpeg" alt="">
+                    </div>
+                </div>
 		<div class="row blog-posts">
 			<div class="col-md-4 col-sm-12">
 				<div class="blog-item post-1 animated zoomIn">
