@@ -877,7 +877,7 @@ h6 {
 }
 
 a {
-    color: #fff;
+    color: #0000;
     text-decoration: none;
     -webkit-transition: all 100ms ease-in-out;
     -moz-transition: all 100ms ease-in-out;
@@ -943,7 +943,7 @@ span[class*="border-"] {
 }
 
 .main-button,.main-footer .social li a {
-    color: #fff;
+    color: #6d747e;
     text-transform: uppercase;
     font-size: 12px;
     padding: 10px 15px;
