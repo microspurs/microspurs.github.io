@@ -356,7 +356,7 @@ h2.welcome-title {
 .inner-story {
     background: #fff;
     padding: 40px;
-    color: #32353a;
+    color: #000000;
     -moz-animation-delay: 0.5s;
     -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
@@ -393,7 +393,7 @@ h2.welcome-title {
 }
 
 .offer-title {
-    color: #4e91c9;
+    color: #000000;
     padding: 30px;
     background: #fff;
     margin-bottom: 40px;
@@ -419,7 +419,7 @@ h2.welcome-title {
 .offer-content {
     padding: 30px;
     background: #fff;
-    color: #32353a;
+    color: #000000;
     position: relative;
 }
 
@@ -447,7 +447,7 @@ span.offer-left {
     height: 0;
     line-height: 0;
     border: 15px solid transparent;
-    border-left: 15px solid #32353a;
+    border-left: 15px solid #000000;
     border-bottom: 15px solid #32353a;
     left: 0px;
     top: 0px;
@@ -487,23 +487,23 @@ span.offer-right {
 }
 
 .projects-header {
-    margin-top: 30px;
-    margin-bottom: 80px;
+    margin-top: 3px;
+    margin-bottom: -999px;
     text-align: center;
 }
 
 .projects-header h2 {
-    font-weight: 100;
-    color: #fff;
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-weight: 10;
+    color: #000;
+    font-size: 3px;
+    margin-bottom: 3px;
     -moz-animation-delay: 0.5s;
     -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
 }
 
 .projects-header p {
-    font-size: 17px;
+    font-size: 10px;
     line-height: 1.75em;
     -moz-animation-delay: 1s;
     -webkit-animation-delay: 1s;
@@ -570,7 +570,7 @@ span.offer-right {
 }
 
 .blog-item a {
-    color: #32353a;
+    color: #000000;
 }
 
 .blog-item h3 {
@@ -589,8 +589,8 @@ span.offer-right {
 
 span.solid-line {
     width: 60px;
-    height: 2px;
-    background: #32353a;
+    height: 0.5px;
+    background: #000000;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -599,10 +599,10 @@ span.solid-line {
 }
 
 .post-button {
-    font-size: 12px;
+    font-size: 0.5px;
     text-transform: uppercase;
-    font-weight: 700;
-    padding: 12px 20px;
+    font-weight: 9;
+    padding: 10px 20px;
     background: #eee;
 }
 
@@ -644,7 +644,7 @@ span.solid-line {
     position: relative;
     z-index: 9;
     background: #fff;
-    padding: 60px 30px;
+    padding: 0px 50px;
 }
 
 .blog-content p {
@@ -725,7 +725,7 @@ span.solid-line {
 }
 
 .contact-holder {
-    background: #46494f;
+    background: #000000;
     margin-bottom: 100px;
 }
 
@@ -768,7 +768,7 @@ span.solid-line {
 }
 
 .contact-form input,.contact-form textarea {
-    background: #32353a;
+    background: #000000;
     border: 0;
     outline: 0;
     color: #fff;
@@ -788,8 +788,8 @@ span.solid-line {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 12px;
-    background: #4e91c9;
-    color: #fff !important;
+    background: #000000;
+    color: #000 !important;
     padding: 12px 20px;
     display: inline-block;
     margin-bottom: 30px;
@@ -811,8 +811,8 @@ span.solid-line {
 }
 
 .main-footer .social li a:hover {
-    background: #4e91c9;
-    border-color: #4e91c9;
+    background: #ffffff;
+    border-color: #ffffff;
 }
 
 .copyright {
@@ -821,7 +821,7 @@ span.solid-line {
 }
 
 .copyright p {
-    margin-bottom: 10px;
+    margin-bottom: -9px;
     font-size: 12px;
 }
 
@@ -893,7 +893,7 @@ a:hover {
 
 span[class*="border-"] {
     position: fixed;
-    background: #1f2122;
+    background: #000000;
 }
 
 .border-top {
@@ -943,12 +943,12 @@ span[class*="border-"] {
 }
 
 .main-button,.main-footer .social li a {
-    color: #6d747e;
+    color: #000000;
     text-transform: uppercase;
     font-size: 12px;
     padding: 10px 15px;
     display: inline-block;
-    border: 2px solid #46494f;
+    border: 0.5px solid #000000;
 }
 
 .pink-button {
