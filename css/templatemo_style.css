@@ -833,9 +833,9 @@ html {
 
 body {
     background: url("../picture/77.JPEG");
-    font-size: 15px;
-    font-weight: 300;
-    color: #;
+    /* font-size: 15px; */
+    /* font-weight: 300; */
+    /* color: #000000; */
     padding: 30px;
     font-family: "Roboto",sans-serif;
     line-height: 1.55;
