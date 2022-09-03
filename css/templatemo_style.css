@@ -641,7 +641,7 @@ span.solid-line {
 }
 
 .blog-content {
-    position: relative;
+    /* position: relative; */
     z-index: 9;
     background: #fff;
     padding: 0px 50px;
