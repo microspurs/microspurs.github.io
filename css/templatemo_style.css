@@ -803,8 +803,8 @@ span.solid-line {
 }
 
 .main-footer .social li {
-   /* display: inline-block; */
-   /* margin: 0 15px 15px 15px; */
+   display: inline-block;
+   margin: 0 15px 15px 15px;
 }
 
 .main-footer .social li a {
