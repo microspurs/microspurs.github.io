@@ -51,17 +51,10 @@
 
 <!--microspurs-->
 <div class="projects-header">
-      
         <div class="projects-holder">
-	<div class="row">
-		<div class="blog-bg blog-pink"></div>
-                    <div class="project-item">
-                     <img src="picture/11.png" alt="">
-                     </div>
-                    </div>
-            <div class="row">
-                
-		<div class="blog-bg blog-pink"></div>
-                    <div class="project-item">
-                        <img src="picture/44.png" alt="">
-                    </div>
+               <div class="row">
+                 <div class="blog-content">
+                  <div class="col-md-12">
+                    <div class="blog-bg blog-pink"></div>
+                      <div class="project-item">
+                        <div><img src="picture/44.png"/></div>
