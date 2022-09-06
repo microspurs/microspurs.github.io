@@ -149,9 +149,14 @@
                         <img src="picture/44.png" alt="">
                     </div>
                    </div>
-		   </div>
-		   </div>
-		   </div>
+		   <div class="row">
+                
+		<div class="blog-bg blog-pink"></div>
+                    <div class="project-item">
+                        <img src="picture/77.jpeg" alt="">
+                    </div>
+                   </div>
+		 
 </footer>
 <!-- templatemo 421 raleway -->
 <!--
