@@ -134,8 +134,8 @@ nav.main-navigation {
 
 @media screen and (max-width: 1040px) {
     .container {
-      /* padding-right: 40px; */
-      /* padding-left: 40px; */
+      padding-right: 40px;
+      padding-left: 40px;
     }
 }
 
