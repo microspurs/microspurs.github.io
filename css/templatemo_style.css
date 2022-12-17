@@ -578,42 +578,41 @@ span.offer-right {
     -webkit-animation-delay: 4.6s;
     animation-delay: 4.6s;
     }
-    .p-12{
+.p-12{
     -moz-animation-delay: 4.9s;
     -webkit-animation-delay: 4.9s;
     animation-delay: 4.9s;
     }
-    .p-13{
+.p-13{
     -moz-animation-delay: 5.2s;
     -webkit-animation-delay: 5.2s;
     animation-delay: 5.2s;
     }
-    .p-14{
+.p-14{
     -moz-animation-delay: 5.4s;
     -webkit-animation-delay: 5.4s;
     animation-delay: 5.4s;
     }
-    .p-15{
+.p-15{
     -moz-animation-delay: 5.6s;
     -webkit-animation-delay: 5.6s;
     animation-delay: 5.6s;
     }
-    .p-16{
+.p-16{
     -moz-animation-delay: 5.8s;
     -webkit-animation-delay: 5.8s;
     animation-delay: 5.8s;
     }
-    .p-17{
+.p-17{
     -moz-animation-delay: 6.0s;
     -webkit-animation-delay: 6.0s;
     animation-delay: 6.0s;
     }
-    .p-18{
+.p-18{
     -moz-animation-delay: 6.3s;
     -webkit-animation-delay: 6.3s;
     animation-delay: 6.3s;
-    
-
+    }
 .blog-posts {
     margin-bottom: 80px;
 }
