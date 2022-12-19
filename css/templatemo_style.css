@@ -613,6 +613,11 @@ span.offer-right {
     -webkit-animation-delay: 6.3s;
     animation-delay: 6.3s;
     }
+.p-19{
+    -moz-animation-delay: 6.6s;
+    -webkit-animation-delay: 6.6s;
+    animation-delay: 6.6s;
+    }
 .blog-posts {
     margin-bottom: 80px;
 }
