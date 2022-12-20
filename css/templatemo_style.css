@@ -618,6 +618,32 @@ span.offer-right {
     -webkit-animation-delay: 6.6s;
     animation-delay: 6.6s;
     }
+.p-20{
+    -moz-animation-delay: 6.9s;
+    -webkit-animation-delay: 6.9s;
+    animation-delay: 6.9s;
+    }
+.p-21{
+    -moz-animation-delay: 7.2s;
+    -webkit-animation-delay: 7.2s;
+    animation-delay: 7.2s;
+    }
+.p-22{
+    -moz-animation-delay: 7.4s;
+    -webkit-animation-delay: 7.4s;
+    animation-delay: 7.4s;
+    }
+.p-23{
+    -moz-animation-delay: 7.6s;
+    -webkit-animation-delay: 7.6s;
+    animation-delay: 7.6s;
+    }
+.p-24{
+    -moz-animation-delay: 7.8s;
+    -webkit-animation-delay: 7.8s;
+    animation-delay: 7.8s;
+    }
+
 .blog-posts {
     margin-bottom: 80px;
 }
