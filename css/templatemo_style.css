@@ -62,8 +62,7 @@ table {
 
 
 
-*,*:before,*:after {
-    box-sizing: inherit;
+
 }
 
 .site-header {
