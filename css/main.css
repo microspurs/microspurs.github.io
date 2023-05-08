@@ -4,12 +4,12 @@
 	--text-wrap-width: 62ch;
 	--line-height: 1.2em;
 	--light:
-	rgb(0 0 0);
+			rgb(0 0 0);
 	--font-size: 1em;
 	--single-bottom-line-padding:
-	calc(1 * var(--line-height)) 3ch calc(1 * var(--line-height)) 3ch;
+			calc(1 * var(--line-height)) 3ch calc(1 * var(--line-height)) 3ch;
 	--double-bottom-line-padding:
-	calc(1 * var(--line-height)) 3ch calc(2 * var(--line-height)) 3ch;
+			calc(1 * var(--line-height)) 3ch calc(2 * var(--line-height)) 3ch;
 }
 *, *:before, *:after {
 	box-sizing: inherit;
@@ -47,11 +47,11 @@ img{
 	display: block;
 }
 pre {
-	font-family: inherit;
+	font-family: 'Courier New', 'Libre Franklin', -apple-system, 'Helvetica Neue', sans-serif;
 	margin: 0;
 	padding: 0;
-/*	white-space: normal;*/
-/*	white-space: pre-line;*/
+	/*	white-space: normal;*/
+	/*	white-space: pre-line;*/
 	max-width: var(--text-wrap-width);
 }
 a {
@@ -70,9 +70,10 @@ section.col_1 {
 	padding: var(--single-bottom-line-padding);
 	width: 100%;
 	margin: 0;
-	font-family: inherit;
+	font-family: 'Courier New', 'Libre Franklin', -apple-system, 'Helvetica Neue', sans-serif;
 	font-size: inherit;
 	line-height: inherit;
+	justify-content: space-between;
 }
 section.col_2 {
 	grid-template-columns: var(--title-column-width) max-content max-content;
@@ -102,16 +103,16 @@ video {
 	min-height: var(--line-height);
 }
 .light {
-	 color: black;
-	 background-color: var(--light);
+	color: black;
+	background-color: var(--light);
 }
 .dark {
-	 color: var(--light);
-	 background-color: black;
+	color: var(--light);
+	background-color: black;
 }
 .red {
-	 color: var(--light);
-	 background-color: black;
+	color: var(--light);
+	background-color: black;
 }
 .diagram {
 	position: relative;
@@ -143,10 +144,10 @@ video {
 }
 .flip {
 	background-color: var(--light);
-  	perspective: 200vw;
-  	position: relative;
-  	height: 100vw;
-  	overflow: hidden;
+	perspective: 200vw;
+	position: relative;
+	height: 100vw;
+	overflow: hidden;
 }
 .flip_inner {
 	position: relative;
@@ -197,7 +198,7 @@ video {
 /* -------------------------------------------------------------------------- */
 .input-incomplete {
 	background: linear-gradient(-90deg, rgb(100, 100, 100) 0%, black 100%);
-/*	background-color: rgb(160, 30, 30) !important;*/
+	/*	background-color: rgb(160, 30, 30) !important;*/
 }
 
 textarea,
@@ -394,7 +395,7 @@ section.wallet_section {
 
 @media only screen and (max-width: 700px){
 	* {
-		/* --font-size: 0.8em; */
+		--font-size: 0.8em;
 	}
 	#header {
 		/* position: relative; */
@@ -410,6 +411,6 @@ section.wallet_section {
 
 @media only screen and (min-width: 1300px){
 	* {
-		--font-size: 1.4em;
+		--font-size: 1em;
 	}
 }
