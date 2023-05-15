@@ -152,26 +152,7 @@
     <p>Copyright © 2023</p>
     <a href="http://www.microspurs.ga" class="site-name">-丶o</a>
 
-</footer><div class="entry-content section-inner thin">
-    <head>
-	<title>实时显示访客 IP 示例</title>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$(function() {
-			$.getJSON("https://api.ipify.org?format=json", function(data) {
-				$("#ip").text(data.ip);
-			});
-			setInterval(function() {
-				$.getJSON("https://api.ipify.org?format=json", function(data) {
-					$("#ip").text(data.ip);
-				});
-			}, 1000);
-		});
-	</script>
-</head>
-<body>
-	<h1></h1>
-	<p id="ip"></p><!-- footer -->
+</footer><!-- footer -->
 
 <!-- Start of StatCounter Code -->
 <script>
