@@ -168,6 +168,42 @@
 	<p id="currentTime"></p>
 </body>
 
+</p>
+	<meta charset="UTF-8">
+	<title>显示访客当前城市名称</title>
+</head>
+<body>
+	
+	<p><span id="city-name"></span></p>
+	<script>
+		// 获取访客的IP地址
+		function getIPAddress() {
+			fetch("https://api.ipify.org/?format=json")
+			.then(response => response.json())
+			.then(data => {
+				var ipAddress = data.ip;
+				getCityName(ipAddress);
+			})
+			.catch(error => console.error(error));
+		}
+		
+		// 获取IP地址对应的城市名称
+		function getCityName(ipAddress) {
+			var url = "https://ipapi.co/" + ipAddress + "/json/";
+			fetch(url)
+			.then(response => response.json())
+			.then(data => {
+				var cityName = data.city;
+				document.getElementById("city-name").textContent = cityName;
+			})
+			.catch(error => console.error(error));
+		}
+		
+		// 显示访客当前所在城市名称
+		getIPAddress();
+	</script>
+</	body>
+
 <footer class="site-footer section-inner">
 
     <p>Copyright © 2023</p>
