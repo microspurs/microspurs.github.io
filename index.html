@@ -147,37 +147,25 @@
 </main>
 <footer class="site-footer section-inner">
 <head>
-	<title>实时显示网站当前在线人数</title>
-	<script type="text/javascript">
-		// 初始化在线人数为 0
-		var onlineCount = 0;
-
-		// 有人进入页面时，更新在线人数
-		function updateOnlineCount() {
-			onlineCount++;
-			document.getElementById("onlineCount").innerHTML = "Visitors  " + onlineCount;
+	<meta charset="UTF-8">
+	<title>实时显示当前时间</title>
+	<script>
+		function updateTime() {
+			var now = new Date();
+			var hours = now.getHours();
+			var minutes = now.getMinutes();
+			var seconds = now.getSeconds();
+			var timeStr = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+			document.getElementById("currentTime").innerHTML = timeStr;
 		}
 
-		// 有人离开页面时，更新在线人数
-		function updateOnlineCountOnUnload() {
-			onlineCount--;
-			document.getElementById("onlineCount").innerHTML = "Visitors  " + onlineCount;
-		}
-
-		// 在页面加载完成后，调用 updateOnlineCount() 函数更新当前在线人数
-		window.onload = function() {
-			updateOnlineCount();
-		}
-
-		// 在页面关闭或离开时，调用 updateOnlineCountOnUnload() 函数更新当前在线人数
-		window.onbeforeunload = function() {
-			updateOnlineCountOnUnload();
-		}
+		setInterval(updateTime, 1000);
 	</script>
 	
 </head>
 <body>
-	<p id="onlineCount">在线：0</p>
+    	
+	<p id="currentTime"></p>
 </body>
 
 <footer class="site-footer section-inner">
