@@ -138,79 +138,86 @@
 
 
         <div class="entry-content section-inner thin">
-            <style>
-                body {
-                    background-color: white;
-                    font-family: 'Courier New', monospace;
-                    font-size: 15px;
-                }
+<style>
+  body {
+    background-color: white;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+  }
 
-                .typewriter {
-                    display: inline;
-                }
+  .typewriter-container {
+    width: 350px; /* 调整此值以更改容器宽度 */
+    margin: 0 auto;
+    padding-left: 20px; /* 调整此值以更改文本左侧空白区域宽度 */
+    padding-right: 33px; /* 调整此值以更改文本右侧空白区域宽度 */
+  }
 
-                .cursor {
-                    background-color: black;
-                    display: inline-block;
-                    width: 5px;
-                    height: 10px;
-                    margin-left:px;
-                    animation: blink 0.8s step-end infinite;
-                }
+  .typewriter {
+    display: inline;
+  }
 
-                .link {
-                    color: black;
-                    text-decoration: none;
-                    cursor: pointer;
-                    display: block;
-                    margin-top: 5em;
-                    width: 65px;
-                }
+  .cursor {
+    background-color: black;
+    display: inline-block;
+    width: 5px;
+    height: 10px;
+    margin-left: 5px;
+    animation: blink 0.8s step-end infinite;
+  }
 
-                @keyframes blink {
-                    50% {
-                        background-color: transparent;
-                    }
-                }
-            </style>
-            </head>
-            <body>
-            <div class="typewriter">
-                <span id="typed-text"></span>
-                <span class="cursor"></span>
-            </div>
+  .link {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    margin-top: 5em;
+    width: 65px;
+  }
 
-            <script>
-                const text = '                                                 I divide the site entries into photographs and film, as well as tape covers. The photographs and film were taken by myself and processed by post-processing. The cover image in the tape was collected and sorted out by me and restored in high definition, if you are interested in my work, please go to the contact interface to contact me, please do not reprint privately. Retention of title attribution is interpreted by microspurs.';
+  @keyframes blink {
+    50% {
+      background-color: transparent;
+    }
+  }
+</style>
 
-                const typedTextElement = document.getElementById('typed-text');
-                let currentIndex = 0;
+<div class="typewriter-container">
+  <div class="typewriter">
+    <span id="typed-text"></span>
+    <span class="cursor"></span>
+  </div>
+</div>
 
-                function type() {
-                    if (currentIndex < text.length) {
-                        typedTextElement.textContent += text[currentIndex];
-                        currentIndex++;
-                        setTimeout(type, 40); // 调整此值以更改字符之间的间隔时间
-                    }
+<script>
+  const text = '                                                 I divide the site entries into photographs and film, as well as tape covers. The photographs and film were taken by myself and processed by post-processing. The cover image in the tape was collected and sorted out by me and restored in high definition, if you are interested in my work, please go to the contact interface to contact me, please do not reprint privately. Retention of title attribution is interpreted by microspurs.';
 
-                    if (currentIndex == text.length) {
-                        const linkElement = document.createElement('a');
+  const typedTextElement = document.getElementById('typed-text');
+  let currentIndex = 0;
 
-                        linkElement.classList.add('link');
-                        typedTextElement.parentElement.appendChild(document.createTextNode(' '));
-                        typedTextElement.parentElement.appendChild(linkElement);
-                        const linkWidth = linkElement.offsetWidth;
-                        typedTextElement.parentElement.removeChild(linkElement);
-                        typedTextElement.parentElement.removeChild(typedTextElement.nextSibling);
-                        typedTextElement.insertAdjacentHTML('afterend', `<a href="https://microspurs.ga/contact.html" class="link">contact</a>`);
-                        const cursorElement = document.querySelector('.cursor');
-                        cursorElement.style.marginLeft = `${linkWidth + 5}px`;
-                    }
-                }
+  function type() {
+    if (currentIndex < text.length) {
+      typedTextElement.textContent += text[currentIndex];
+      currentIndex++;
+      setTimeout(type, 40); // 调整此值以更改字符之间的间隔时间
+    }
 
-                type();
-            </script>
+    if (currentIndex == text.length) {
+      const linkElement = document.createElement('a');
 
+      linkElement.classList.add('link');
+      typedTextElement.parentElement.appendChild(document.createTextNode(' '));
+      typedTextElement.parentElement.appendChild(linkElement);
+      const linkWidth = linkElement.offsetWidth;
+      typedTextElement.parentElement.removeChild(linkElement);
+      typedTextElement.parentElement.removeChild(typedTextElement.nextSibling);
+      typedTextElement.insertAdjacentHTML('afterend', `<a href="https://microspurs.ga/contact.html" class="link">contact</a>`);
+      const cursorElement = document.querySelector('.cursor');
+      cursorElement.style.marginLeft = `${linkWidth + 5}px`;
+    }
+  }
+
+  type();
+</script>
 </main>
 
 
