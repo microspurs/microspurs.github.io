@@ -125,7 +125,7 @@ body {
 	background: #fff;
 	border: none;
 	color: #000;
-	font-family: 'Courier New', 'Libre Franklin', -apple-system, 'Helvetica Neue', sans-serif;
+	font-family: 'Courier New', monospace;
 	font-size: 16px; /*18.12.19 originally 20px;*/
 }
 
