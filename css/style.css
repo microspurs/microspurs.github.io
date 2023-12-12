@@ -432,7 +432,7 @@ a {
 
 .site-nav ul:first-child a:hover,
 .site-nav ul:first-child .current-menu-item > a {
-	border-bottom-color: #000;
+	border-bottom-color: rgba( 0, 0, 0, .35 );
 }
 
 .dark-mode .site-nav ul:first-child a:hover,
