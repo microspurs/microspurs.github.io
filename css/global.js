@@ -211,12 +211,3 @@ jQuery( document ).ready( function( $ ) {
 
     });
 	
-});});document.addEventListener("DOMContentLoaded", function(){
-	var menuItems = document.querySelectorAll('.menu-item-has-children');
-	menuItems.forEach(function(item){
-		item.addEventListener('click', function(){
-			var subMenu = this.querySelector('.sub-menu');
-			subMenu.style.display = (subMenu.style.display === 'block' ? 'none' : 'block');
-		});
-	});
-});
