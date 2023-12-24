@@ -2798,3 +2798,7 @@ tbody > tr:nth-child(odd) { background: rgba( 0, 0, 0, 0.05 ); }
 	}
 
 }
+}.sub-menu {
+	 display: none;
+
+}
