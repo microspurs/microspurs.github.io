@@ -206,8 +206,10 @@ jQuery( document ).ready( function( $ ) {
 			
 			// Show the load more button again
 			$( '#infinite-handle' ).fadeIn();
-			
-        });
 
-    });
-	
+		});
+
+
+	});
+
+});
