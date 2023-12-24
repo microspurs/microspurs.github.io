@@ -390,8 +390,9 @@ a {
 }
 
 .site-nav ul ul {
-	margin: 20px 0 0 0px;
+	margin: 20px 0 0 40px;
 }
+
 
 .site-nav ul + ul {
 	margin-left: 20px;
@@ -2798,7 +2799,7 @@ tbody > tr:nth-child(odd) { background: rgba( 0, 0, 0, 0.05 ); }
 	}
 
 }
-}.sub-menu {
+.sub-menu {
 	 display: none;
 
 }
