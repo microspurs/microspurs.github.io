@@ -221,7 +221,87 @@
   </div> <!-- .post -->
 
 </main>
+<div class="entry-content section-inner thin">
 
+    <p>
+        <a href="">
+            </a></p>
+    <style>
+
+        /* 初始背景颜色和字体颜色 */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            transition: background-color 0.9s, color 0.9s; /* 添加过渡效果 */
+        }
+
+        /* 初始菜单栏背景颜色和字体颜色 */
+        .menu {
+
+            color: #000000;
+            transition: background-color 0.9s, color 0.9s; /* 添加过渡效果 */
+        }
+
+        /* 切换后的背景颜色和字体颜色 */
+        .dark-mode {
+
+            color: #000000;
+        }
+        /* 切换后的菜单栏背景颜色和字体颜色 */
+        .dark-mode .menu {
+
+            color: #000000;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #000;
+            border: none;
+            cursor: pointer;
+            float: none;
+        }
+    </style>
+    <script>
+        function toggleColors() {
+            var body = document.body;
+            var currentBgColor = body.style.backgroundColor;
+            var currentFontColor = body.style.color;
+
+            // 切换背景颜色
+            if (currentBgColor === 'black') {
+                body.style.backgroundColor = 'white';
+            } else {
+                body.style.backgroundColor = 'black';
+            }
+
+            // 切换字体颜色
+            if (currentFontColor === 'white') {
+                body.style.color = 'black';
+            } else {
+                body.style.color = 'white';
+            }
+        }
+        function toggleDarkMode() {
+            var body = document.body;
+            var menu = document.querySelector('.menu');
+
+            // 切换背景颜色和字体颜色
+            body.classList.toggle('dark-mode');
+            menu.classList.toggle('dark-mode');
+        }
+    </script>
+
+    <button class="dot" onclick="toggleDarkMode()"></button>
+
+    <nav class="menu">
+
+    </nav>
+
+    <script>
+
+    </script>
+</div>
 
 <footer class="site-footer section-inner">
 
