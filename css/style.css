@@ -134,7 +134,7 @@ body.customizer-preview {
 }
 
 body.dark-mode {
-	background: #1d1d1d;
+	background: #000000;
 	color: #fff;
 }
 
@@ -367,7 +367,7 @@ a {
 }
 
 .dark-mode .site-nav {
-	background: #1d1d1d;
+	background: #000000;
 }
 
 .site-nav.active {
@@ -448,8 +448,9 @@ a {
 
 .dark-mode .site-nav ul:last-child a:hover,
 .dark-mode .site-nav ul:last-child .current-menu-item > a {
-	border-bottom-color: rgba( 255, 255, 255, .35 );
+	border-bottom-color: rgb(255, 255, 255);
 }
+
 
 .site-nav footer {
 	background: #fff;
@@ -1543,7 +1544,7 @@ input[type="submit"]:hover {
 .dark-mode .button,
 .dark-mode input[type="button"],
 .dark-mode input[type="submit"] {
-	background: rgba( 255, 255, 255, .25 );
+	background: rgb(255, 255, 255);
 	transition: background-color .2s ease-in-out;
 }
 
