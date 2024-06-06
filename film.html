@@ -171,25 +171,27 @@
     <p></p>
     <script>
         function checkPassword(event) {
-            event.preventDefault(); // Prevent the form from refreshing the page
-            if (event.keyCode === 13) {  // Check if the key pressed is Enter key
-                var password = document.getElementById("passwordInput").value;
-                if (password === "1988") {  // Replace "1988" with your password
-                    var inputBox = document.getElementById("passwordInput");
-                    inputBox.style.borderBottomColor = "green";
-                    setTimeout(function() {
-                        inputBox.style.borderBottomColor = "lightgrey";
-                        window.location.href = "https://microspurs.cn/Image.html";  // Replace with your desired URL
-                    }, 2000); // Reset the border color after 2 seconds
-                } else {
-                    var inputBox = document.getElementById("passwordInput");
-                    inputBox.style.borderBottomColor = "red";
-                    setTimeout(function() {
-                        inputBox.style.borderBottomColor = "lightgrey";
-                    }, 2000); // Reset the border color after 2 seconds
-                }
-            }
-        }
+                  event.preventDefault(); // Prevent the form from refreshing the page
+                  if (event.keyCode === 13) {  // Check if the key pressed is Enter key
+                      var password = document.getElementById("passwordInput").value;
+                      if (password === "1988") {  // Replace "1988" with your password
+                          var inputBox = document.getElementById("passwordInput");
+                          inputBox.style.borderBottomColor = "green";
+                          setTimeout(function() {
+                              inputBox.style.borderBottomColor = "lightgrey";
+                              window.location.href = "https://microspurs.cn/Image.html";  // Replace with your desired URL
+                          }, 2000); // Reset the border color after 2 seconds
+                      } else {
+                          var inputBox = document.getElementById("passwordInput");
+                          inputBox.style.borderBottomColor = "red";
+                          setTimeout(function() {
+                              inputBox.style.borderBottomColor = "lightgrey";
+                          }, 2000); // Reset the border color after 2 seconds
+                      }
+                      document.activeElement.blur(); // Hide the keyboard
+                  }
+              }
+
     </script>
 
 
