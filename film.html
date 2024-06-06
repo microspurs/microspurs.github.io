@@ -153,24 +153,24 @@
 
 
          <p></p>
-     <style>
+            <style>
               #passwordInput {
                   letter-spacing: 1em; /* Adjust the letter spacing here */
                   border-top: none;
                   border-right: none;
                   border-left: none;
-
               }
           </style>
           </head>
-       
+          <body>
           <h2>Enter Password</h2>
-          <form id="passwordForm">
+          <form id="passwordForm" onsubmit="checkPassword(event)">
               <input type="password" id="passwordInput" onkeyup="checkPassword(event)">
           </form>
           <p></p>
           <script>
               function checkPassword(event) {
+                  event.preventDefault(); // Prevent the form from refreshing the page
                   if (event.keyCode === 13) {  // Check if the key pressed is Enter key
                       var password = document.getElementById("passwordInput").value;
                       if (password === "1988") {  // Replace "1988" with your password
