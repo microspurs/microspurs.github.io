@@ -2229,7 +2229,7 @@ tbody > tr:nth-child(odd) { background: rgba( 0, 0, 0, 0.05 ); }
 }
 
 .site-footer p + p {
-	color: rgba( 0, 0, 0, .35 );
+	color: rgb(0 0 0);
 	font-size: 18px;
 	margin-top: 12px;
 }
