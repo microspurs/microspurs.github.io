@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html class="js" lang="en-US"><head>
-
-  <meta http-equiv="content-type" content="text/html" charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="shortcut icon" href="http://microspurs.cn/picture/线.png">
 
@@ -115,7 +115,7 @@
                 </ul>
             </li>
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-tape-cover">
-                <a href="http://microspurs.cn/VHS.html">Tape/cover</a>
+                <a href="http://microspurs.cn/Tape.html">Tape/cover</a>
 
             </li>
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-about">
@@ -149,7 +149,6 @@
 
         </header><!-- .page-header -->
 
-
         <div class="entry-content section-inner thin">
 
             <figure class="wp-block-image size-full"><img loading="lazy" width="6000" height="10000" src="https://microspurs.cn/picture/线.png" alt="" class="wp-image-1396" srcset="" sizes="(max-width: 15000px) 100vw, 15000px"></figure>
@@ -161,64 +160,57 @@
     </div> <!-- .post -->
 
 </main>
+
 <footer class="site-footer section-inner">
 <head>
 	<meta charset="UTF-8">
-	<title>实时显示当前时间</title>
-	<script>
-		function updateTime() {
-			var now = new Date();
-			var hours = now.getHours();
-			var minutes = now.getMinutes();
-			var seconds = now.getSeconds();
-			var timeStr = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-			document.getElementById("currentTime").innerHTML = timeStr;
-		}
-
-		setInterval(updateTime, 1000);
-	</script>
-	
+    <title>显示实时时间和访客城市</title>
 </head>
-<body>
-    	
-	<p id="currentTime"></p>
-</body>
+    <body>
+    <p id="currentTime"></p>
+    <p><span id="city-name"></span></p>
 
-</p>
-	<meta charset="UTF-8">
-	<title>显示访客当前城市名称</title>
-</head>
-<body>
-	
-	<p><span id="city-name"></span></p>
-	<script>
-		// 获取访客的IP地址
-		function getIPAddress() {
-			fetch("https://api.ipify.org/?format=json")
-			.then(response => response.json())
-			.then(data => {
-				var ipAddress = data.ip;
-				getCityName(ipAddress);
-			})
-			.catch(error => console.error(error));
-		}
-		
-		// 获取IP地址对应的城市名称
-		function getCityName(ipAddress) {
-			var url = "https://ipapi.co/" + ipAddress + "/json/";
-			fetch(url)
-			.then(response => response.json())
-			.then(data => {
-				var cityName = data.city;
-				document.getElementById("city-name").textContent = cityName;
-			})
-			.catch(error => console.error(error));
-		}
-		
-		// 显示访客当前所在城市名称
-		getIPAddress();
-	</script>
-</body>
+    <footer class="site-footer section-inner">
+        <p>Copyright © 2024</p>
+        <a href="http://microspurs.cn" class="site-name">-丶o</a>
+    </footer>
+
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var timeStr = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            document.getElementById("currentTime").textContent = timeStr;
+        }
+
+        function getIPAddress() {
+            fetch("https://api.ipify.org/?format=json")
+                .then(response => response.json())
+                .then(data => {
+                    var ipAddress = data.ip;
+                    getCityName(ipAddress);
+                })
+                .catch(error => console.error(error));
+        }
+
+        function getCityName(ipAddress) {
+            var url = "https://ipapi.co/" + ipAddress + "/json/";
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    var cityName = data.city;
+                    document.getElementById("city-name").textContent = cityName;
+                })
+                .catch(error => console.error(error));
+        }
+
+        updateTime(); // 初始化时间
+        setInterval(updateTime, 1000); // 每秒更新时间
+        getIPAddress(); // 获取城市名称
+    </script>
+    </body>
 
 <footer class="site-footer section-inner">
 
@@ -246,6 +238,6 @@
 <script type="text/javascript" src="css/wp-embed.min.js" id="wp-embed-js"></script>
 
 
-
-</body></html>
-
+</footer>
+</body>
+</html>
