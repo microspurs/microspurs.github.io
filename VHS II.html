@@ -153,14 +153,11 @@
                 body {
                     margin: 0;
                     padding: 0;
-                   /* To allow scrolling */
                 }
 
                 .title-box {
                     width: 100%;
-
                     padding: 20px;
-
                     transition: margin-top 0.5s, opacity 0.5s;
                     margin-top: -100px; /* Initial position off-screen */
                     opacity: 0;
@@ -179,10 +176,8 @@
                     align-items: center;
                 }
             </style>
-            </head>
-            <body>
 
-          <div class="title-box">
+            <div class="title-box">
                 <div class="left-title" onclick="window.location.href='http://microspurs.cn/VHS.html'">
                     <h2>VHS</h2>
                 </div>
@@ -194,77 +189,87 @@
                 </div>
             </div>
 
-
             <script>
-                let titleBox = document.querySelector('.title-box');
+                const titleBox = document.querySelector('.title-box');
+                let isHidden = true;
                 let startY = 0;
-                let isHidden = true; // Start with the title box hidden
+                let isTouchMoving = false;
 
-                // Handle touch events
+                function toggleTitleBox(show) {
+                    if (show && isHidden) {
+                        titleBox.classList.add('show');
+                        isHidden = false;
+                    } else if (!show && !isHidden) {
+                        titleBox.classList.remove('show');
+                        isHidden = true;
+                    }
+                }
+
+                // Touch event handling
                 document.addEventListener('touchstart', (e) => {
                     startY = e.touches[0].clientY;
+                    isTouchMoving = true;
                 });
 
                 document.addEventListener('touchmove', (e) => {
-                    let currentY = e.touches[0].clientY;
-                    let deltaY = currentY - startY;
+                    if (!isTouchMoving) return;
+                    const currentY = e.touches[0].clientY;
+                    const deltaY = currentY - startY;
 
-                    if (deltaY > 10 && isHidden) {
-                        titleBox.classList.add('show');
-                        isHidden = false;
-                    } else if (deltaY < -10 && !isHidden) {
-                        titleBox.classList.remove('show');
-                        isHidden = true;
+                    if (deltaY > 10) {
+                        toggleTitleBox(true);
+                        isTouchMoving = false;
+                    } else if (deltaY < -10) {
+                        toggleTitleBox(false);
+                        isTouchMoving = false;
                     }
 
                     startY = currentY;
                 });
 
-                // Handle mouse wheel events
+                document.addEventListener('touchend', () => {
+                    isTouchMoving = false;
+                });
+
+                // Wheel event handling with improved logic
                 window.addEventListener('wheel', (e) => {
-                    let deltaY = e.deltaY;
+                    const deltaY = e.deltaY;
 
                     if (deltaY < 0 && isHidden) {
-                        titleBox.classList.add('show');
-                        isHidden = false;
-                    } else if (deltaY > 0 && !isHidden && window.scrollY === 0) {
-                        titleBox.classList.remove('show');
-                        isHidden = true;
+                        toggleTitleBox(true);
+                    } else if (deltaY > 0 && !isHidden) {
+                        toggleTitleBox(false);
                     }
                 });
 
-                // Handle mouse middle button click and move events
+                // Middle mouse button handling
                 document.addEventListener('mousedown', (e) => {
-                    if (e.button === 1) { // 1 represents the middle mouse button
-                        startY = e.clientY;
-                    }
+                    if (e.button === 1) startY = e.clientY;
                 });
 
                 document.addEventListener('mousemove', (e) => {
-                    if (e.buttons === 4) { // 4 represents the middle mouse button being held
-                        let currentY = e.clientY;
-                        let deltaY = currentY - startY;
+                    if (e.buttons === 4) {
+                        const currentY = e.clientY;
+                        const deltaY = currentY - startY;
 
                         if (deltaY > 10 && isHidden) {
-                            titleBox.classList.add('show');
-                            isHidden = false;
+                            toggleTitleBox(true);
                         } else if (deltaY < -10 && !isHidden) {
-                            titleBox.classList.remove('show');
-                            isHidden = true;
+                            toggleTitleBox(false);
                         }
 
                         startY = currentY;
-                        window.scrollBy(0, -deltaY); // Scroll the page based on deltaY
+                        window.scrollBy(0, -deltaY);
                     }
                 });
 
                 document.addEventListener('mouseup', (e) => {
-                    if (e.button === 1) { // 1 represents the middle mouse button
-                        startY = 0;
-                    }
+                    if (e.button === 1) startY = 0;
                 });
             </script>
+
             <style>
+        
 
                 body {
 
