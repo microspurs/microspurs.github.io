@@ -3,14 +3,14 @@
 
   <meta http-equiv="content-type" content="text/html" charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="http://microspurs.cn/picture/线.png">
 
- <link rel="shortcut icon" href="http://microspurs.cn/picture/线.png">
+    <link rel="bookmark" href="http://microspurs.cn/picture/线.png">
+    <link rel="apple-touch-icon" href="http://microspurs.cn/picture/线.png">
 
-<link rel="bookmark" href="http://microspurs.cn/picture/线.png">
-<link rel="apple-touch-icon" href="http://microspurs.cn/picture/线.png">
+    <title>microspurs</title>
+    <meta name="robots" content="max-image-preview:large">
 
-  <title>microspurs</title>
-  <meta name="robots" content="max-image-preview:large">
 
 
   <!-- All in One SEO Pack 3.3.3 by Michael Torbert of Semper Fi Web Design[321,339] -->
@@ -56,7 +56,7 @@
   <link rel="alternate" type="application/json+oembed" href="css/embed">
   <link rel="alternate" type="text/xml+oembed" href="css/embed&amp;format=xml">
   <script>jQuery( 'html' ).removeClass( 'no-js' ).addClass( 'js' );</script>
- 
+
   <meta name="msapplication-TileImage" content="css/close.svg">
 
   <!-- BEGIN ExactMetrics v5.3.9 Universal Analytics - https://exactmetrics.com/ -->
@@ -97,8 +97,7 @@
 </header> <!-- header -->
 
 <nav class="site-nav">
-
-<div class="section-inner menus group">
+    <div class="section-inner menus group">
         <ul id="menu-main-menu-1" class="menu">
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45">
                 <a href="http://microspurs.cn/index.html" aria-current="page">Main page</a>
@@ -109,8 +108,7 @@
                     <li><a href="https://microspurs.cn/photograph.html">photograph</a></li>
                     <li><a href="http://microspurs.cn/Negative film.html">Negative film</a></li>
                     <li><a href="http://microspurs.cn/Record.html">Record</a></li>
-            
-            <li><a href="https://microspurs.cn/film.html">film</a></li>
+                    <li><a href="https://microspurs.cn/film.html">film</a></li>
                 </ul>
             </li>
             <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-43 current_page_item menu-item-45">
@@ -123,7 +121,7 @@
         </ul>
     </div>
 
-  <footer>
+    <footer>
     <footer>
 
         <div class="section-inner">
@@ -134,9 +132,7 @@
         </div>
 
     </footer>
-
 </nav>
-
 <main id="site-content">
     <div class="section-inner post-1087 page type-page status-publish hentry missing-thumbnail">
 
@@ -150,7 +146,166 @@
         </header><!-- .page-header -->
 
 
+
+
         <div class="entry-content section-inner thin">
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                   /* To allow scrolling */
+                }
+
+                .title-box {
+                    width: 100%;
+
+                    padding: 20px;
+
+                    transition: margin-top 0.5s, opacity 0.5s;
+                    margin-top: -100px; /* Initial position off-screen */
+                    opacity: 0;
+                }
+
+                .show {
+                    margin-top: 0;
+                    opacity: 1;
+                }
+
+                .container {
+                    width: 100%;
+                    padding-top: 60px; /* Adjust padding to give space for the title box */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            </style>
+            </head>
+            <body>
+
+            <div class="title-box">
+                <div class="left-title" onclick="window.location.href='http://microspurs.cn/VHS.html'">
+                    <h2>VHS</h2>
+                </div>
+                <div class="separator">
+                    <h2>/</h2>
+                </div>
+                <div class="right-title" onclick="window.location.href='http://microspurs.cn/Tape.html'">
+                    <h2>Tape cover</h2>
+                </div>
+            </div>
+
+
+            <script>
+                let titleBox = document.querySelector('.title-box');
+                let startY = 0;
+                let isHidden = true; // Start with the title box hidden
+
+                // Handle touch events
+                document.addEventListener('touchstart', (e) => {
+                    startY = e.touches[0].clientY;
+                });
+
+                document.addEventListener('touchmove', (e) => {
+                    let currentY = e.touches[0].clientY;
+                    let deltaY = currentY - startY;
+
+                    if (deltaY > 10 && isHidden) {
+                        titleBox.classList.add('show');
+                        isHidden = false;
+                    } else if (deltaY < -10 && !isHidden) {
+                        titleBox.classList.remove('show');
+                        isHidden = true;
+                    }
+
+                    startY = currentY;
+                });
+
+                // Handle mouse wheel events
+                window.addEventListener('wheel', (e) => {
+                    let deltaY = e.deltaY;
+
+                    if (deltaY < 0 && isHidden) {
+                        titleBox.classList.add('show');
+                        isHidden = false;
+                    } else if (deltaY > 0 && !isHidden && window.scrollY === 0) {
+                        titleBox.classList.remove('show');
+                        isHidden = true;
+                    }
+                });
+
+                // Handle mouse middle button click and move events
+                document.addEventListener('mousedown', (e) => {
+                    if (e.button === 1) { // 1 represents the middle mouse button
+                        startY = e.clientY;
+                    }
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (e.buttons === 4) { // 4 represents the middle mouse button being held
+                        let currentY = e.clientY;
+                        let deltaY = currentY - startY;
+
+                        if (deltaY > 10 && isHidden) {
+                            titleBox.classList.add('show');
+                            isHidden = false;
+                        } else if (deltaY < -10 && !isHidden) {
+                            titleBox.classList.remove('show');
+                            isHidden = true;
+                        }
+
+                        startY = currentY;
+                        window.scrollBy(0, -deltaY); // Scroll the page based on deltaY
+                    }
+                });
+
+                document.addEventListener('mouseup', (e) => {
+                    if (e.button === 1) { // 1 represents the middle mouse button
+                        startY = 0;
+                    }
+                });
+            </script>
+            <style>
+
+                body {
+
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .container {
+                    /* display: flex;*/
+                    justify-content: space-between;
+                    width: 50%; /* 修改容器宽度为70% */
+                    height: 150px;
+                }
+                .left-title,
+                .right-title {
+                    flex: 1;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                    padding: 10px;
+                    position: relative; /* 相对定位，为伪元素设置绝对定位的参考 */
+                }
+
+                .left-title:hover,
+                .right-title:hover {
+                    color: #888; /* 鼠标悬停时修改字体颜色 */
+                }
+
+                .separator {
+                    cursor: default;
+                    background-color: transparent; /* 透明背景色 */
+                    margin: 10px;
+                }
+
+                h2 {
+                    margin: 0; /* 移除标题的默认外边距 */
+                }
+
+
+
+            </style>
 
 
             <figure class="wp-block-image size-full size-large"><img loading="lazy" width="1500" height="2224" src="https://microspurs.cn/picture/35.jpg" alt="" class="wp-image-1423" srcset="" sizes="(max-width: 1500px) 100vw, 1500px"></figure><h4>broadcast audio tape</h4>
@@ -158,36 +313,9 @@
             <figure class="wp-block-image size-full size-large"><img loading="lazy" width="1500" height="2224" src="https://microspurs.cn/picture/36.jpg" alt="" class="wp-image-1423" srcset="" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
             <h4>Petrel Audio tape</h4>
             <p>77 - 79  front</p>
-            <figure class="wp-block-image size-full size-large"><img loading="lazy" width="1500" height="2224" src="https://microspurs.cn/picture/34.jpg" alt="" class="wp-image-1423" srcset="" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
-            <h4>Peacock audio  tape</h4>
-            <p>80 - 89  front</p>
-
-
             <figure class="wp-block-image size-full"><img loading="lazy" width="1500" height="2277" src="https://microspurs.cn/picture/32.jpg" alt="" class="wp-image-1442" srcset="" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
-
-
-
             <h4>Parrot audio  tape</h4>
-
-
-
             <p>77 - 89  front</p>
-
-
-
-            <figure class="wp-block-image size-full"><img loading="lazy" width="1500" height="2356" src="https://microspurs.cn/picture/33.jpg" alt="" class="wp-image-1404" srcset="" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
-            <h4>Parrot audio  tape</h4>
-
-
-            <p>77 - 89  front</p>
-
-
-
-            <figure class="wp-block-image size-full size-large"><img loading="lazy" width="1500" height="2275" src="https://microspurs.cn/picture/31.jpg" alt="" class="wp-image-1420" srcset="" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
-            <h4>Baihua audio tape</h4>
-
-            <p>77 - 89  front</p>
-
 
 
 
@@ -204,7 +332,7 @@
 <div class="entry-content section-inner thin">
 
     <p>
-        <a href="http://microspurs.cn/Tape3.html">Nan ho Recorder</a></p>
+        <a href="http://microspurs.cn/Tape III.html">Tape III</a></p>
 
 </div>
 
