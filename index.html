@@ -226,10 +226,22 @@
         .dark-mode .menu {
             color: #ffffff;
         }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #000;
+            border: none;
+            cursor: pointer;
+            float: none;
+            position: absolute;
+        }
     </style>
     </head>
     <body>
 
+    
     <nav class="menu">
         <!-- 这里放你的菜单项 -->
     </nav>
@@ -237,6 +249,26 @@
     <script>
         // 切换颜色主题的函数
         function toggleDarkMode() {
+            let body = document.body;
+            let menu = document.querySelector('.menu');
+            let image = document.getElementById('main-image'); // 获取图片元素
+
+            // 切换暗黑模式类名
+            body.classList.toggle('dark-mode');
+            menu.classList.toggle('dark-mode');
+
+            // 根据暗黑模式状态更改图片源
+            if (body.classList.contains('dark-mode')) {
+                // 暗黑模式激活
+                image.src = "picture/线1.png"; // 替换为你的暗黑模式图片路径
+            } else {
+                // 亮色模式激活
+                image.src = "picture/线.png"; // 原始图片路径
+            }
+        }
+
+        // 自动切换颜色主题的函数
+        function autoToggleDarkMode() {
             let body = document.body;
             let menu = document.querySelector('.menu');
             let image = document.getElementById('main-image'); // 获取图片元素
@@ -261,13 +293,13 @@
             }
         }
 
-        // 页面加载完成后调用切换函数
+        // 页面加载完成后调用自动切换函数
         window.onload = function() {
-            toggleDarkMode();
+            autoToggleDarkMode();
         };
 
-        // 每小时检查一次切换主题
-        setInterval(toggleDarkMode, 3600000); // 3600000毫秒 = 1小时
+        // 每小时检查一次自动切换主题
+        setInterval(autoToggleDarkMode, 3600000); // 3600000毫秒 = 1小时
     </script>
     </body>
 
@@ -296,8 +328,9 @@
     <script type="text/javascript" src="css/global.js" id="hamilton_global-js"></script>
     <script type="text/javascript" src="css/wp-embed.min.js" id="wp-embed-js"></script>
 
-    
+
 </body></footer>
 </body>
 </html>
+
 
