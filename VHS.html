@@ -384,12 +384,13 @@
         // 获取当前时间
         var currentTime = new Date().getHours();
 
-        // 判断是否在晚上（20:00 到 05:59）
-        if (currentTime >= 20 || currentTime < 6) {
+        // 判断是否在晚上（18:00 到 05:59）
+        if (currentTime >= 18 || currentTime < 6) {
             // 如果是晚上，应用暗黑模式
             document.body.classList.add('dark-mode');
             document.querySelector('.menu').classList.add('dark-mode');
         }
+
 
         // 切换颜色主题的函数
         function toggleDarkMode() {
