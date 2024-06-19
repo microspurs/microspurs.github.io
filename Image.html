@@ -156,47 +156,48 @@
 
 
            
-             <style>
+           
+            <style>
                 body, html {
                     margin: 0;
                     padding: 0;
                     height: 100%;
-                    overflow: hidden;
+                    /* overflow: hidden; */ /* 移除或更改这行 */
                 }
 
-                .video-background {
+                .video-box {
                     position: fixed;
                     top: 0;
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    z-index: -1; /* 使视频背景在其他内容后面 */
+                    z-index: -1; /* 确保视频在其他内容后面 */
                 }
 
-                .video-background video {
+                .video-box video {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover; /* 确保视频适应背景尺寸 */
-                    pointer-events: none; /* 禁用视频元素上的点击事件，隐藏播放按钮 */
+                    object-fit: cover;
+                    pointer-events: none; /* 鼠标事件透过视频传递到下方的内容 */
                 }
+
 
                 .content {
                     position: relative;
                     z-index: 1;
-                    color: #ffffff; /* 文字颜色为白色，确保在视频背景上可见 */
+                    color: #ffffff; /* 确保在视频背景上可见 */
                 }
 
                 .menu {
                     color: #ffffff;
                 }
             </style>
-            </head>
-            <body>
-            <div class="video-background">
+
+            <div class="video-box">
                 <video data-autoplay="" autoplay="" webkit-playsinline="" playsinline="" loop="" muted="" data-object-fit="cover">
-                <source src="picture/110.MOV" type="video/mp4">
-                </video>
+                    <source src="picture/110.MOV" type="video/mp4"></video>
             </div>
+
             </head>
             <body>
             <div class="video-background">
