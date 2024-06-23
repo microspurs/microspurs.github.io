@@ -104,10 +104,9 @@
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-photograph">
                 <a href="#">Photoalbum</a>
                 <ul class="sub-menu">
-                    <li><a href="https://microspurs.cn/photograph.html">photograph</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-43 current_page_item menu-item-45"><a href="https://microspurs.cn/photograph.html">photograph</a></li>
                     <li><a href="http://microspurs.cn/Negative film.html">Negative film</a></li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-43 current_page_item menu-item-45"><a href="http://microspurs.cn/Record.html">Record</a></li>
-
+                   
                     <li><a href="https://microspurs.cn/film.html">film</a></li>
                 </ul>
             </li>
@@ -127,7 +126,7 @@
         <div class="section-inner">
 
             <p>© 2024 <a href="http://microspurs.cn" class="site-name"> -丶o</a></p>
-            <p class="theme-by"> <a href=""></a></p>
+            <p class="theme-by"> <a href="https://www.andersnoren.se"></a></p>
 
         </div>
 
@@ -148,8 +147,169 @@
         </header><!-- .page-header -->
 
 
-        <div class="entry-content section-inner thin">
 
+        <div class="entry-content section-inner thin">
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .title-box {
+                    width: 100%;
+                    height: 150px;
+                    transition: margin-top 0.5s, opacity 0.5s;
+                    margin-top: -100px; /* Initial position off-screen */
+                    opacity: 0;
+                }
+
+                .show {
+                    margin-top: 0;
+                    opacity: 1;
+                }
+
+                .container {
+                    width: 100%;
+                    padding-top: 60px; /* Adjust padding to give space for the title box */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            </style>
+
+            <div class="title-box">
+                <div class="left-title" onclick="window.location.href='https://microspurs.cn/photograph.html'">
+                    <h2>photograph</h2>
+                </div>
+                <div class="separator">
+                    <h2>/</h2>
+                </div>
+                <div class="right-title" onclick="window.location.href='https://microspurs.cn/Record.html'">
+                    <h2>Record</h2>
+                </div>
+            </div>
+
+            <script>
+                const titleBox = document.querySelector('.title-box');
+                let isHidden = true;
+                let startY = 0;
+                let isTouchMoving = false;
+
+                function toggleTitleBox(show) {
+                    if (show && isHidden) {
+                        titleBox.classList.add('show');
+                        isHidden = false;
+                    } else if (!show && !isHidden) {
+                        titleBox.classList.remove('show');
+                        isHidden = true;
+                    }
+                }
+
+                // Touch event handling
+                document.addEventListener('touchstart', (e) => {
+                    startY = e.touches[0].clientY;
+                    isTouchMoving = true;
+                });
+
+                document.addEventListener('touchmove', (e) => {
+                    if (!isTouchMoving) return;
+                    const currentY = e.touches[0].clientY;
+                    const deltaY = currentY - startY;
+
+                    if (deltaY > 10) {
+                        toggleTitleBox(true);
+                        isTouchMoving = false;
+                    } else if (deltaY < -10) {
+                        toggleTitleBox(false);
+                        isTouchMoving = false;
+                    }
+
+                    startY = currentY;
+                });
+
+                document.addEventListener('touchend', () => {
+                    isTouchMoving = false;
+                });
+
+                // Wheel event handling with improved logic
+                window.addEventListener('wheel', (e) => {
+                    const deltaY = e.deltaY;
+
+                    if (deltaY < 0 && isHidden) {
+                        toggleTitleBox(true);
+                    } else if (deltaY > 0 && !isHidden) {
+                        toggleTitleBox(false);
+                    }
+                });
+
+                // Middle mouse button handling
+                document.addEventListener('mousedown', (e) => {
+                    if (e.button === 1) startY = e.clientY;
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (e.buttons === 4) {
+                        const currentY = e.clientY;
+                        const deltaY = currentY - startY;
+
+                        if (deltaY > 10 && isHidden) {
+                            toggleTitleBox(true);
+                        } else if (deltaY < -10 && !isHidden) {
+                            toggleTitleBox(false);
+                        }
+
+                        startY = currentY;
+                        window.scrollBy(0, -deltaY);
+                    }
+                });
+
+                document.addEventListener('mouseup', (e) => {
+                    if (e.button === 1) startY = 0;
+                });
+            </script>
+
+            <style>
+
+                body {
+
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .container {
+                    /* display: flex;*/
+                    justify-content: space-between;
+                    width: 50%; /* 修改容器宽度为70% */
+                    height: 150px;
+                }
+                .left-title,
+                .right-title {
+                    flex: 1;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                    padding: 10px;
+                    position: relative; /* 相对定位，为伪元素设置绝对定位的参考 */
+                }
+
+                .left-title:hover,
+                .right-title:hover {
+                    color: #888; /* 鼠标悬停时修改字体颜色 */
+                }
+
+                .separator {
+                    cursor: default;
+                    background-color: transparent; /* 透明背景色 */
+                    margin: 10px;
+                }
+
+                h2 {
+                    margin: 0; /* 移除标题的默认外边距 */
+                }
+
+
+
+            </style>
 
 
             <figure class="wp-block-image size-full size-large"><img loading="lazy" width="1500" height="2224" src="picture/93.jpg" alt="" class="wp-image-1423" srcset="" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
