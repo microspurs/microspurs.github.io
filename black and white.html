@@ -148,7 +148,7 @@
         </header><!-- .page-header -->
 
         <div class="entry-content section-inner thin">
-            <style>
+ <style>
                 body {
                     margin: 0;
                     padding: 0;
@@ -174,85 +174,8 @@
                     justify-content: center;
                     align-items: center;
                 }
-
-                .container {
-                    justify-content: space-between;
-                    width: 50%; /* 修改容器宽度为50% */
-                    height: 150px;
-                }
-
-                .left-title,
-                .right-title {
-                    flex: 1;
-                    text-align: center;
-                    cursor: pointer;
-                    transition: background-color 0.3s;
-                    padding: 10px;
-                    position: relative; /* 相对定位，为伪元素设置绝对定位的参考 */
-                }
-
-                .left-title:hover,
-                .right-title:hover {
-                    color: #888; /* 鼠标悬停时修改字体颜色 */
-                }
-
-                .separator {
-                    cursor: default;
-                    background-color: transparent; /* 透明背景色 */
-                    margin: 10px;
-                }
-
-                h2 {
-                    margin: 0; /* 移除标题的默认外边距 */
-                }
-
-                .image-grid {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    gap: 20px;
-                }
-
-                .image-grid.full-width {
-                    grid-template-columns: 1fr 1fr 1fr;
-                }
-
-                .image-item {
-                    text-align: center;
-                    transition: opacity 0.5s;
-                }
-
-                .image-grid.full-width .image-item h4,
-                .image-grid.full-width .image-item p {
-                    display: none;
-                }
-
-                #toggleButton {
-                    background-color: #55555500;
-                    color: #7d7d7d;
-                    border: none;
-                    cursor: pointer;
-                    transition: background-color 0.5s, color 0.5s;
-                    float: right;
-
-                }
-
-                #toggleButton::before {
-                    content: "+";
-                    display: inline-block;
-                    margin-right: 6px;
-                }
-
-                #toggleButton.clicked::before {
-                    content: "-";
-                }
-
-                #toggleButton:focus {
-                    outline: none;
-                }
             </style>
-            </head>
 
-            <body>
             <div class="title-box">
                 <div class="left-title" onclick="window.location.href='https://microspurs.cn/photograph.html'">
                     <h2>photograph</h2>
@@ -262,31 +185,6 @@
                 </div>
                 <div class="right-title" onclick="window.location.href='https://microspurs.cn/Record.html'">
                     <h2>Record</h2>
-                </div>
-                <button id="toggleButton"></button>
-            </div>
-
-            <div class="image-grid">
-                <div class="image-item">
-                    <figure class="wp-block-image size-full size-large">
-                        <img loading="lazy" width="1500" height="2224" src="picture/79.jpg" alt="" class="wp-image-1423">
-                    </figure>
-                    <h4>Tiananmen Square, 2023</h4>
-                    <p>3791 x 2483 mm</p>
-                </div>
-                <div class="image-item">
-                    <figure class="wp-block-image size-full size-large">
-                        <img loading="lazy" width="1500" height="2224" src="picture/80.jpg" alt="" class="wp-image-1423">
-                    </figure>
-                    <h4>The entrance of the stairs, 2023</h4>
-                    <p>1882 x 1258 mm</p>
-                </div>
-                <div class="image-item">
-                    <figure class="wp-block-image size-full size-large">
-                        <img loading="lazy" width="1500" height="2224" src="picture/82.jpg" alt="" class="wp-image-1423">
-                    </figure>
-                    <h4>Old building, 2024</h4>
-                    <p>2592 x 1944 mm</p>
                 </div>
             </div>
 
@@ -367,21 +265,100 @@
                 document.addEventListener('mouseup', (e) => {
                     if (e.button === 1) startY = 0;
                 });
-
-                var grid = document.querySelector('.image-grid');
-                var toggleButton = document.getElementById('toggleButton');
-
-                toggleButton.addEventListener('click', function () {
-                    grid.classList.toggle('full-width');
-                    toggleButton.classList.toggle('clicked');
-                });
             </script>
 
+            <style>
+
+                body {
+
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .container {
+                    /* display: flex;*/
+                    justify-content: space-between;
+                    width: 50%; /* 修改容器宽度为70% */
+                    height: 150px;
+                }
+                .left-title,
+                .right-title {
+                    flex: 1;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                    padding: 10px;
+                    position: relative; /* 相对定位，为伪元素设置绝对定位的参考 */
+                }
+
+                .left-title:hover,
+                .right-title:hover {
+                    color: #888; /* 鼠标悬停时修改字体颜色 */
+                }
+
+                .separator {
+                    cursor: default;
+                    background-color: transparent; /* 透明背景色 */
+                    margin: 10px;
+                }
+
+                h2 {
+                    margin: 0; /* 移除标题的默认外边距 */
+                }
 
 
-            </body></div> <!-- .post -->
 
-    </div></main>
+            </style>
+
+            <figure class="wp-block-image size-full"><img loading="lazy" width="1500" height="2277" src="picture/79.jpg" alt="" class="wp-image-1442" srcset="" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
+
+
+
+            <h4>fog , 2022</h4>
+
+
+
+            <p>1422 x 881 mm</p>
+
+
+
+            <figure class="wp-block-image size-full"><img loading="lazy" width="1500" height="2356" src="picture/80.jpg" alt="" class="wp-image-1404" srcset="" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
+
+
+
+            <h4>ridge , 2022</h4>
+
+
+            <p> 1292 x 759 mm</p>
+
+
+
+
+
+            <figure class="wp-block-image size-full size-large"><img loading="lazy" width="1500" height="2224" src="picture/82.jpg" alt="" class="wp-image-1423" srcset="" sizes="(max-width: 1500px) 100vw, 1500px"></figure>
+
+
+
+            <h4>church , 2019</h4>
+
+
+
+
+            <p> 1083 x 585 mm</p>
+
+
+
+
+
+
+
+        </div> <!-- .content -->
+
+
+
+    </div> <!-- .post -->
+
+</main>
 <div class="entry-content section-inner thin">
     <style>
         /* 初始的浅色模式样式 */
@@ -490,4 +467,3 @@
 
 
 </body></html>
-
