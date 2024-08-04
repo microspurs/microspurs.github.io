@@ -149,7 +149,8 @@
 
         <div class="entry-content section-inner thin">
 
-            <style>
+           <style>
+                /* Basic styling */
                 body {
                     margin: 0;
                     padding: 0;
@@ -234,7 +235,6 @@
                     cursor: pointer;
                     transition: background-color 0.5s, color 0.5s;
                     float: right;
-
                 }
 
                 #toggleButton::before {
@@ -251,8 +251,8 @@
                     outline: none;
                 }
             </style>
+            <title>Responsive Grid Layout</title>
             </head>
-
             <body>
             <div class="title-box">
                 <div class="left-title" onclick="window.location.href='http://microspurs.cn/Inverting.html'">
@@ -285,7 +285,7 @@
 
             </div>
 
-            <script>
+          <script>
                 const titleBox = document.querySelector('.title-box');
                 let isHidden = true;
                 let startY = 0;
@@ -370,8 +370,17 @@
                     grid.classList.toggle('full-width');
                     toggleButton.classList.toggle('clicked');
                 });
-            </script>
 
+                // Automatically set the initial button state based on screen width
+                window.addEventListener('DOMContentLoaded', () => {
+                    const screenWidth = window.innerWidth;
+
+                    if (screenWidth >= 768) {
+                        toggleButton.classList.add('clicked');
+                        grid.classList.add('full-width');
+                    }
+                });
+            </script>
 
 
             </body></div> <!-- .post -->
