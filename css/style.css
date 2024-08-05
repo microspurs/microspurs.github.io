@@ -126,7 +126,7 @@ body {
 	border: none;
 	color: #000;
 	font-family: 'Courier New', monospace;
-	font-size: 16px; /*18.12.19 originally 20px;*/
+	font-size: 12px; /*18.12.19 originally 20px;*/
 }
 
 body.customizer-preview {
@@ -459,7 +459,7 @@ a {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	font-size: 15px; /*added 4.12.19 to make copyright smaller*/
+	font-size: 12px; /*added 4.12.19 to make copyright smaller*/
 }
 
 .dark-mode .site-nav footer {
@@ -1115,7 +1115,7 @@ hr.is-style-dots {
 }
 
 .entry-content h1 { font-size: 40px; }
-.entry-content h2 {font-size: 15px;}
+.entry-content h2 {font-size: 12px;}
 .entry-content h3 { font-size: 28px; }
 /*.entry-content h4 { font-size: 24px; } commented out 4.12.19*/
 .entry-content h5 {
@@ -2222,7 +2222,7 @@ tbody > tr:nth-child(odd) { background: rgba( 0, 0, 0, 0.05 ); }
 }
 
 .site-footer p {
-	font-size: 15px; /*added 4.12.19 to make copyright smaller*/
+	font-size: 12px; /*added 4.12.19 to make copyright smaller*/
 	font-weight: 500;
 	line-height: 1;
 	text-align: justify;
