@@ -2482,7 +2482,7 @@ tbody > tr:nth-child(odd) { background: rgba( 0, 0, 0, 0.05 ); }
 
 
 	body {
-		font-size: 15px; /*4.12.19 originally 18px */
+		font-size: 12px; /*4.12.19 originally 18px */
 	}
 
 
