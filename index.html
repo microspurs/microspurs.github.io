@@ -234,10 +234,14 @@
             float: none;
             position: absolute;
         }
+        
+        #main-image {
+        transition: opacity 1s ease;  /* 添加图片的过渡效果，调整透明度，持续时间 0.9 秒，缓动效果为 ease */
+    }
     </style>
     </head>
     <body>
-
+  
    
     <nav class="menu">
         <!-- 这里放你的菜单项 -->
@@ -254,42 +258,53 @@
             body.classList.toggle('dark-mode');
             menu.classList.toggle('dark-mode');
 
-            // 根据暗黑模式状态更改图片源
-            if (body.classList.contains('dark-mode')) {
-                // 暗黑模式激活
-                image.src = "picture/线1.png"; // 替换为你的暗黑模式图片路径
-            } else {
-                // 亮色模式激活
-                image.src = "picture/线.png"; // 原始图片路径
-            }
+           // 根据暗黑模式状态更改图片透明度
+        if (body.classList.contains('dark-mode')) {
+            image.src = "picture/线1.png";  // 切换为晚上的图片
+            image.style.opacity = 0;  // 初始透明度为 0
+            setTimeout(() => {
+                image.style.opacity = 1;  // 逐渐变为完全显示
+            }, 10);  // 可微调延迟时间
+        } else {
+            image.src = "picture/线.png";  // 切换为白天的图片
+            image.style.opacity = 0;  // 初始透明度为 0
+            setTimeout(() => {
+                image.style.opacity = 1;  // 逐渐变为完全显示
+            }, 10);  // 可微调延迟时间
         }
+    }
 
-        // 自动切换颜色主题的函数
-        function autoToggleDarkMode() {
-            let body = document.body;
-            let menu = document.querySelector('.menu');
-            let image = document.getElementById('main-image'); // 获取图片元素
+    // 自动切换颜色主题的函数
+    function autoToggleDarkMode() {
+        let body = document.body;
+        let menu = document.querySelector('.menu');
+        let image = document.getElementById('main-image'); // 获取图片元素
 
-            // 获取当前小时数 (0-23)
-            let hour = new Date().getHours();
+        // 获取当前小时数 (0-23)
+        let hour = new Date().getHours();
 
-            // 设置白天和晚上切换的阈值
-            const isDayTime = hour >= 6 && hour < 18; // 假设白天是从早上6点到晚上6点
+        // 设置白天和晚上切换的阈值
+        const isDayTime = hour >= 6 && hour < 18; // 假设白天是从早上 6 点到晚上 6 点
 
-            // 根据时间切换暗黑模式
-            if (!isDayTime) {
-                body.classList.add('dark-mode');
-                menu.classList.add('dark-mode');
-                // 根据情况更改图片路径
-                image.src = "picture/线1.png"; // 暗黑模式图片路径
-            } else {
-                body.classList.remove('dark-mode');
-                menu.classList.remove('dark-mode');
-                // 根据情况更改图片路径
-                image.src = "picture/线.png"; // 原始图片路径
-            }
+        // 根据时间切换暗黑模式
+        if (!isDayTime) {
+            body.classList.add('dark-mode');
+            menu.classList.add('dark-mode');
+            image.src = "picture/线1.png";  // 切换为晚上的图片
+            image.style.opacity = 0;  // 初始透明度为 0
+            setTimeout(() => {
+                image.style.opacity = 1;  // 逐渐变为完全显示
+            }, 10);  // 可微调延迟时间
+        } else {
+            body.classList.remove('dark-mode');
+            menu.classList.remove('dark-mode');
+            image.src = "picture/线.png";  // 切换为白天的图片
+            image.style.opacity = 0;  // 初始透明度为 0
+            setTimeout(() => {
+                image.style.opacity = 1;  // 逐渐变为完全显示
+            }, 10);  // 可微调延迟时间
         }
-
+    }
         // 页面加载完成后调用自动切换函数
         window.onload = function() {
             autoToggleDarkMode();
