@@ -240,6 +240,10 @@
         #main-image {
         transition: opacity 1s ease;  /* 添加图片的过渡效果，调整透明度，持续时间 0.9 秒，缓动效果为 ease */
     }
+          .dark-mode .site-footer img {
+            filter: invert(10) brightness(10);
+        }
+
     </style>
     </head>
     <body>
@@ -317,11 +321,12 @@
     </script>
     </body>
 
-    <footer class="site-footer section-inner">
-
+    <footer class="site-footer section-inner align-right">
         <p>Copyright © 2024</p>
-        <a href="http://fotomemo.cn" class="site-name">-丶o</a>
-
+        <p></p>
+        <a href="http://fotomemo.cn" class="site-name">
+            <img src="css/1.png" alt="Site Logo" width="15" height="15">
+        </a>
     </footer>
 
     <!-- Start of StatCounter Code -->
