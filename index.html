@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     
-   
-   <link rel="shortcut icon" type=image/x-icon href=css/1.ico>
+
+
+    <link rel="shortcut icon" type=image/x-icon href=css/1.ico>
     <link rel=mask-icon href=css/1.svg >
     <link rel=apple-touch-icon-precomposed href=css/1.png>
     <title>fotomemo</title>
@@ -109,7 +109,7 @@
                 <ul class="sub-menu">
                     <li><a href="https://fotomemo.cn/photograph.html">photograph</a></li>
                     <li><a href="http://fotomemo.cn/Inverting.html">Inverting</a></li>
-                    
+
                     <li><a href="https://fotomemo.cn/film.html">film</a></li>
                 </ul>
             </li>
@@ -123,7 +123,7 @@
         </ul>
     </div>
 
-   <footer class="site-footer section-inner align-right">
+    <footer class="site-footer section-inner align-right">
 
         <a href="http://fotomemo.cn" class="site-name">
             <img src="css/1.png" alt="Site Logo" width="15" height="15">
@@ -143,13 +143,63 @@
             </div>
 
         </header><!-- .page-header -->
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                /* overflow: hidden; */ /* 移除或更改这行 */
+            }
 
+            .video-box {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1; /* 确保视频在其他内容后面 */
+            }
+
+            .video-box video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                pointer-events: none; /* 鼠标事件透过视频传递到下方的内容 */
+            }
+
+
+            .content {
+                position: relative;
+                z-index: 1;
+                color: #ffffff; /* 确保在视频背景上可见 */
+            }
+
+            .menu {
+                color: #ffffff;
+            }
+        </style>
+
+        <div class="video-box">
+            <video data-autoplay="" autoplay="" webkit-playsinline="" playsinline="" loop="" muted="" data-object-fit="cover">
+                <source src="picture/22.mp4" type="video/mp4"></video>
+        </div>
+
+        <style>
+            /* Hide the image but keep its space */
+            #main-image {
+                visibility: hidden;
+            }
+        </style>
+        </head>
+
+        <body>
         <div class="entry-content section-inner thin">
             <figure class="wp-block-image size-full">
                 <img loading="lazy" width="6000" height="10000" src="picture/119.JPG" alt="" class="wp-image-1396" id="main-image" srcset="" sizes="(max-width: 15000px) 100vw, 15000px">
             </figure>
+        </div>
 
-       </div> <!-- .post -->
+        </body></div> <!-- .post -->
 
     </div></main>
 
@@ -232,19 +282,19 @@
             float: none;
             position: absolute;
         }
-        
+
         #main-image {
-        transition: opacity 1s ease;  /* 添加图片的过渡效果，调整透明度，持续时间 0.9 秒，缓动效果为 ease */
-    }
-          .dark-mode .site-footer img {
+            transition: opacity 1s ease;  /* 添加图片的过渡效果，调整透明度，持续时间 0.9 秒，缓动效果为 ease */
+        }
+        .dark-mode .site-footer img {
             filter: invert(10) brightness(10);
         }
 
     </style>
     </head>
     <body>
-  
-   
+
+
     <nav class="menu">
         <!-- 这里放你的菜单项 -->
     </nav>
@@ -260,53 +310,53 @@
             body.classList.toggle('dark-mode');
             menu.classList.toggle('dark-mode');
 
-           // 根据暗黑模式状态更改图片透明度
-        if (body.classList.contains('dark-mode')) {
-            image.src = "picture/119.JPG";  // 切换为晚上的图片
-            image.style.opacity = 0;  // 初始透明度为 0
-            setTimeout(() => {
-                image.style.opacity = 1;  // 逐渐变为完全显示
-            }, 10);  // 可微调延迟时间
-        } else {
-            image.src = "picture/119.JPG";  // 切换为白天的图片
-            image.style.opacity = 0;  // 初始透明度为 0
-            setTimeout(() => {
-                image.style.opacity = 1;  // 逐渐变为完全显示
-            }, 10);  // 可微调延迟时间
+            // 根据暗黑模式状态更改图片透明度
+            if (body.classList.contains('dark-mode')) {
+                image.src = "picture/119.JPG";  // 切换为晚上的图片
+                image.style.opacity = 0;  // 初始透明度为 0
+                setTimeout(() => {
+                    image.style.opacity = 1;  // 逐渐变为完全显示
+                }, 10);  // 可微调延迟时间
+            } else {
+                image.src = "picture/119.JPG";  // 切换为白天的图片
+                image.style.opacity = 0;  // 初始透明度为 0
+                setTimeout(() => {
+                    image.style.opacity = 1;  // 逐渐变为完全显示
+                }, 10);  // 可微调延迟时间
+            }
         }
-    }
 
-    // 自动切换颜色主题的函数
-    function autoToggleDarkMode() {
-        let body = document.body;
-        let menu = document.querySelector('.menu');
-        let image = document.getElementById('main-image'); // 获取图片元素
+        // 自动切换颜色主题的函数
+        function autoToggleDarkMode() {
+            let body = document.body;
+            let menu = document.querySelector('.menu');
+            let image = document.getElementById('main-image'); // 获取图片元素
 
-        // 获取当前小时数 (0-23)
-        let hour = new Date().getHours();
+            // 获取当前小时数 (0-23)
+            let hour = new Date().getHours();
 
-        // 设置白天和晚上切换的阈值
-        const isDayTime = hour >= 6 && hour < 18; // 假设白天是从早上 6 点到晚上 6 点
+            // 设置白天和晚上切换的阈值
+            const isDayTime = hour >= 6 && hour < 18; // 假设白天是从早上 6 点到晚上 6 点
 
-        // 根据时间切换暗黑模式
-        if (!isDayTime) {
-            body.classList.add('dark-mode');
-            menu.classList.add('dark-mode');
-            image.src = "picture/119.JPG";  // 切换为晚上的图片
-            image.style.opacity = 0;  // 初始透明度为 0
-            setTimeout(() => {
-                image.style.opacity = 1;  // 逐渐变为完全显示
-            }, 10);  // 可微调延迟时间
-        } else {
-            body.classList.remove('dark-mode');
-            menu.classList.remove('dark-mode');
-            image.src = "picture/119.JPG";  // 切换为白天的图片
-            image.style.opacity = 0;  // 初始透明度为 0
-            setTimeout(() => {
-                image.style.opacity = 1;  // 逐渐变为完全显示
-            }, 10);  // 可微调延迟时间
+            // 根据时间切换暗黑模式
+            if (!isDayTime) {
+                body.classList.add('dark-mode');
+                menu.classList.add('dark-mode');
+                image.src = "picture/119.JPG";  // 切换为晚上的图片
+                image.style.opacity = 0;  // 初始透明度为 0
+                setTimeout(() => {
+                    image.style.opacity = 1;  // 逐渐变为完全显示
+                }, 10);  // 可微调延迟时间
+            } else {
+                body.classList.remove('dark-mode');
+                menu.classList.remove('dark-mode');
+                image.src = "picture/119.JPG";  // 切换为白天的图片
+                image.style.opacity = 0;  // 初始透明度为 0
+                setTimeout(() => {
+                    image.style.opacity = 1;  // 逐渐变为完全显示
+                }, 10);  // 可微调延迟时间
+            }
         }
-    }
         // 页面加载完成后调用自动切换函数
         window.onload = function() {
             autoToggleDarkMode();
@@ -344,8 +394,9 @@
     <script type="text/javascript" src="css/wp-embed.min.js" id="wp-embed-js"></script>
 
 
-</body></footer>
+    </body></footer>
 </body>
 </html>
+
 
 
