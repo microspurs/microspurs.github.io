@@ -675,13 +675,14 @@
             const isMobile = window.innerWidth < 768;
             if (isMobile) {
                 // 在移动端固定图片尺寸为较小值，例如 200px x 300px
-                singleImage.style.maxWidth = '338px';
-                singleImage.style.maxHeight = '2025px';
+                singleImage.style.maxWidth = '300px';
+                singleImage.style.maxHeight = '300px';
             } else {
                 // 在电脑端固定图片尺寸为较大值，例如 400px x 600px
-                singleImage.style.maxWidth = '740px';
-                singleImage.style.maxHeight = '733px';
+                singleImage.style.maxWidth = '560px';
+                singleImage.style.maxHeight = '600px';
             }
+
             document.body.appendChild(singleImageFrame);
 
             singleImageFrame.style.display = 'flex';
