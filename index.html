@@ -150,59 +150,13 @@
             </div>
 
         </header><!-- .page-header -->
-        <style>
-            body, html {
-                margin: 0;
-                padding: 0;
-                height: 100%;
-                /* overflow: hidden; */ /* 移除或更改这行 */
-            }
 
-            .video-box {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1; /* 确保视频在其他内容后面 */
-            }
-
-            .video-box video {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                pointer-events: none; /* 鼠标事件透过视频传递到下方的内容 */
-            }
-
-
-            .content {
-                position: relative;
-                z-index: 1;
-                color: #ffffff; /* 确保在视频背景上可见 */
-            }
-
-            .menu {
-                color: #ffffff;
-            }
-        </style>
-
-        <div class="video-box">
-            <video data-autoplay="" autoplay="" webkit-playsinline="" playsinline="" loop="" muted="" data-object-fit="cover">
-                <source src="picture/22.mp4" type="video/mp4"></video>
-        </div>
-
-        <style>
-            /* Hide the image but keep its space */
-            #main-image {
-                visibility: hidden;
-            }
-        </style>
         </head>
-
+<br><br><br><br><br>
         <body>
         <div class="entry-content section-inner thin">
             <figure class="wp-block-image size-full">
-                <img loading="lazy" width="170" height="10000" src="picture/119.JPG" alt="" class="wp-image-1396" id="main-image" srcset="" sizes="(max-width: 15000px) 100vw, 15000px">
+                <img loading="lazy" width="4250" height="2139" src="picture/111.png" alt="" class="wp-image-1423" srcset="" sizes="(max-width: 1500px) 100vw, 1500px">
             </figure>
         </div>
 
@@ -310,13 +264,13 @@
 
             // 根据暗黑模式状态更改图片透明度
             if (body.classList.contains('dark-mode')) {
-                image.src = "picture/119.JPG";  // 切换为晚上的图片
+                image.src = "picture/111.PNG";  // 切换为晚上的图片
                 image.style.opacity = 0;  // 初始透明度为 0
                 setTimeout(() => {
                     image.style.opacity = 1;  // 逐渐变为完全显示
                 }, 10);  // 可微调延迟时间
             } else {
-                image.src = "picture/119.JPG";  // 切换为白天的图片
+                image.src = "picture/111.PNG";  // 切换为白天的图片
                 image.style.opacity = 0;  // 初始透明度为 0
                 setTimeout(() => {
                     image.style.opacity = 1;  // 逐渐变为完全显示
@@ -340,7 +294,7 @@
             if (!isDayTime) {
                 body.classList.add('dark-mode');
                 menu.classList.add('dark-mode');
-                image.src = "picture/119.JPG";  // 切换为晚上的图片
+                image.src = "picture/111.PNG";  // 切换为晚上的图片
                 image.style.opacity = 0;  // 初始透明度为 0
                 setTimeout(() => {
                     image.style.opacity = 1;  // 逐渐变为完全显示
@@ -348,7 +302,7 @@
             } else {
                 body.classList.remove('dark-mode');
                 menu.classList.remove('dark-mode');
-                image.src = "picture/119.JPG";  // 切换为白天的图片
+                image.src = "picture/111.PNG";  // 切换为白天的图片
                 image.style.opacity = 0;  // 初始透明度为 0
                 setTimeout(() => {
                     image.style.opacity = 1;  // 逐渐变为完全显示
@@ -395,6 +349,7 @@
     </body></footer>
 </body>
 </html>
+
 
 
 
