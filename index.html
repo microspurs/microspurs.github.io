@@ -156,7 +156,7 @@
         <body>
         <div class="entry-content section-inner thin">
             <figure class="wp-block-image size-full">
-                <img loading="lazy" width="4250" height="2139" src="picture/111.png" alt="" class="wp-image-1423" srcset="" sizes="(max-width: 1500px) 100vw, 1500px">
+                <img loading="lazy" width="4250" height="2139" src="picture/010.png" alt="" class="wp-image-1423" srcset="" sizes="(max-width: 1500px) 100vw, 1500px">
             </figure>
         </div>
 
@@ -266,13 +266,13 @@
 
             // 根据暗黑模式状态更改图片透明度
             if (body.classList.contains('dark-mode')) {
-                image.src = "picture/111.PNG";  // 切换为晚上的图片
+                image.src = "picture/010.PNG";  // 切换为晚上的图片
                 image.style.opacity = 0;  // 初始透明度为 0
                 setTimeout(() => {
                     image.style.opacity = 1;  // 逐渐变为完全显示
                 }, 10);  // 可微调延迟时间
             } else {
-                image.src = "picture/111.PNG";  // 切换为白天的图片
+                image.src = "picture/010.PNG";  // 切换为白天的图片
                 image.style.opacity = 0;  // 初始透明度为 0
                 setTimeout(() => {
                     image.style.opacity = 1;  // 逐渐变为完全显示
@@ -296,7 +296,7 @@
             if (!isDayTime) {
                 body.classList.add('dark-mode');
                 menu.classList.add('dark-mode');
-                image.src = "picture/111.PNG";  // 切换为晚上的图片
+                image.src = "picture/010.PNG";  // 切换为晚上的图片
                 image.style.opacity = 0;  // 初始透明度为 0
                 setTimeout(() => {
                     image.style.opacity = 1;  // 逐渐变为完全显示
@@ -304,7 +304,7 @@
             } else {
                 body.classList.remove('dark-mode');
                 menu.classList.remove('dark-mode');
-                image.src = "picture/111.PNG";  // 切换为白天的图片
+                image.src = "picture/010.PNG";  // 切换为白天的图片
                 image.style.opacity = 0;  // 初始透明度为 0
                 setTimeout(() => {
                     image.style.opacity = 1;  // 逐渐变为完全显示
