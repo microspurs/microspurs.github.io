@@ -166,14 +166,13 @@
 
 <footer class="site-footer section-inner">
     <head>
-        <meta charset="UTF-8">
-        <title>显示实时时间和访客城市</title>
-    </head>
-    <body>
+       <meta charset="UTF-8">
+    <title>显示实时时间和访客城市</title>
+</head>
+
+<body>
     <p id="currentTime"></p>
     <p><span id="city-name"></span></p>
-
-
 
     <script>
         function updateTime() {
@@ -181,25 +180,23 @@
             var hours = now.getHours();
             var minutes = now.getMinutes();
             var seconds = now.getSeconds();
-            var timeStr = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            var timeStr = hours + ":" + (minutes < 10? "0" : "") + minutes + ":" + (seconds < 10? "0" : "") + seconds;
             document.getElementById("currentTime").textContent = timeStr;
         }
 
-
-        function getCityName(ipAddress) {
-            var url = "https://ipapi.co/" + ipAddress + "/json/";
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
+        function getCityName() {
+            fetch('https://freegeoip.app/json/')
+               .then(response => response.json())
+               .then(data => {
                     var cityName = data.city;
                     document.getElementById("city-name").textContent = cityName;
                 })
-                .catch(error => console.error(error));
+               .catch(error => console.error(error));
         }
 
         updateTime(); // 初始化时间
         setInterval(updateTime, 1000); // 每秒更新时间
-        getIPAddress(); // 获取城市名称
+        getCityName(); // 获取城市名称
     </script>
     <style>
         /* 初始的浅色模式样式 */
