@@ -84,7 +84,7 @@
             if (screenWidth >= 768) {
                 grid.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
             } else {
-                grid.style.gridTemplateColumns = '1fr 1fr';
+                grid.style.gridTemplateColumns = '1fr 1fr 1fr';
                 // 在移动端隐藏文字
                 const mobileImageItems = document.querySelectorAll('.image-grid div.image-item');
                 mobileImageItems.forEach(item => {
@@ -311,7 +311,7 @@
 
                 .image-grid {
                     display: grid;
-                    grid-template-columns: 1fr 1fr;
+                    grid-template-columns: 1fr 1fr 1fr;
                     gap: 20px;
                 }
 
