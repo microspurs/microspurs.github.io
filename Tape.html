@@ -310,18 +310,55 @@
                 }
 
                 .image-grid {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 20px;
-                }
+                    display: flex;
+                    flex-wrap: wrap; /* Enable wrapping */
+                    gap: 24px; /* Space between items */
 
-                .image-grid.full-width {
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
                 }
 
                 .image-item {
+                    flex: 1 1 calc(33.333% - 20px); /* Default: Three items per row */
+                    max-width: calc(33.333% - 20px); /* Limit width */
                     text-align: center;
-                    transition: opacity 0.5s;
+                    transition: opacity 0.5s, flex 0.5s;
+                    box-sizing: border-box; /* Include padding/borders in width */
+                }
+
+                .image-item img {
+                    width: 100%;
+                    height: auto; /* Maintain aspect ratio */
+                    display: block;
+                }
+
+                @media (min-width: 1200px) {
+                    .image-item {
+                        flex: 1 1 calc(16.666% - 20px); /* Six items per row */
+                        max-width: calc(16.666% - 20px); /* Same as flex-basis */
+                    }
+                }
+
+                /* For 5 items per row */
+                @media (min-width: 1000px) and (max-width: 1199px) {
+                    .image-item {
+                        flex: 1 1 calc(20% - 20px); /* Five items per row */
+                        max-width: calc(20% - 20px); /* Same as flex-basis */
+                    }
+                }
+
+                /* For 4 items per row */
+                @media (min-width: 800px) and (max-width: 999px) {
+                    .image-item {
+                        flex: 1 1 calc(25% - 20px); /* Four items per row */
+                        max-width: calc(25% - 20px); /* Same as flex-basis */
+                    }
+                }
+
+                /* For 3 items per row */
+                @media (min-width: 768px) and (max-width: 799px) {
+                    .image-item {
+                        flex: 1 1 calc(33.333% - 20px); /* Three items per row */
+                        max-width: calc(33.333% - 20px); /* Same as flex-basis */
+                    }
                 }
 
                 .image-item h4,
