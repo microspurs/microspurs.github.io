@@ -1,7 +1,7 @@
 {
   "name": "Fotomemo",
   "short_name": "Fotomemo",
-  "start_url": "www.fotomemo.cn",
+  "start_url": "https://fotomemo.cn/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
