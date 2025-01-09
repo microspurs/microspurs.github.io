@@ -1,7 +1,6 @@
 {
   "name": "Fotomemo",
   "short_name": "Fotomemo",
-  "description": "A creative website for design inspiration",
   "start_url": "www.fotomemo.cn",
   "display": "standalone",
   "background_color": "#ffffff",
